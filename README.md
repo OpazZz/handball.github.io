@@ -1,33 +1,24 @@
-# Handball Coach — version 1.1
+# Handball Coach v1.2 — Map Shoot
 
-Application web progressive (PWA) de suivi des temps de jeu.
+## Fonctions
+- Chronomètre de match avec pause/reprise et périodes.
+- Effectif, entrées/sorties et temps de jeu individuel.
+- Onglet Map Shoot : toucher librement le but pour marquer la position d'impact.
+- Trois résultats de tir : but, arrêt, non cadré.
+- Sélection du joueur, zone de tir, commentaire facultatif.
+- Statistiques globales, par joueur et par zone : tirs, buts, arrêts, non cadrés et taux de réussite.
+- Historique récent avec suppression d'une saisie erronée.
+- Export CSV des tirs (positions comprises).
+- Sauvegarde locale et cache hors ligne.
 
-## Fonctionnalités
-- Interface de match agrandie pour utilisation rapide au bord du terrain, avec action Entrer/Sortir visible sur chaque carte.
-- Séparation entre présence sur le terrain et chronomètre individuel, afin que les temps restent corrects pendant une pause du match.
-- Chronomètre du match, pause/reprise et périodes.
-- Effectif modifiable avec numéro et nom.
-- Entrée/sortie d'un joueur en un appui.
-- Cumul individuel du temps de jeu, y compris après plusieurs rotations.
-- Maximum de 7 joueurs actifs simultanément.
-- Export des temps de jeu en CSV.
-- Sauvegarde locale dans le navigateur.
-- Cache hors ligne via Service Worker.
+## Tester
+Les PWA nécessitent HTTPS ou localhost pour l'installation et le fonctionnement hors ligne. En local :
+`python -m http.server 8000`
+puis ouvrir `http://localhost:8000`.
 
-## Tester en local
-Les PWA nécessitent HTTPS ou localhost pour l'installation et le fonctionnement hors ligne.
-Depuis le dossier, lance par exemple :
+## Installation téléphone
+Déployer tous les fichiers sur un hébergement HTTPS. Android : menu Chrome > Installer/Ajouter à l'écran d'accueil. iPhone : Safari > Partager > Sur l'écran d'accueil.
 
-```bash
-python -m http.server 8000
-```
-
-Puis ouvre `http://localhost:8000`.
-
-## Publier pour installation sur téléphone
-Déploie tous les fichiers du dossier sur un hébergement HTTPS (par exemple GitHub Pages, Netlify ou un hébergement web). Sur Android, ouvre l'URL dans Chrome et choisis Installer/Ajouter à l'écran d'accueil. Sur iPhone, ouvre l'URL dans Safari, bouton Partager, puis « Sur l'écran d'accueil ».
-
-## À savoir
-- Les données sont enregistrées sur l'appareil, dans le navigateur. Elles ne sont pas synchronisées entre plusieurs appareils.
-- Pour éviter de perdre les données, exporte régulièrement les temps de jeu en CSV.
-- Le chrono du match est un chrono écoulé qui compte les pauses uniquement lorsque le coach appuie sur Pause.
+## Calculs
+Taux de réussite = buts / total des tirs enregistrés × 100. Les arrêts et tirs non cadrés comptent comme tentatives mais pas comme buts.
+Les données restent sur l'appareil et ne sont pas synchronisées. Exporter régulièrement le CSV.
