@@ -1,8 +1,10 @@
-# Handball Coach — version 1.0
+# Handball Coach — version 1.1
 
 Application web progressive (PWA) de suivi des temps de jeu.
 
 ## Fonctionnalités
+- Interface de match agrandie pour utilisation rapide au bord du terrain, avec action Entrer/Sortir visible sur chaque carte.
+- Séparation entre présence sur le terrain et chronomètre individuel, afin que les temps restent corrects pendant une pause du match.
 - Chronomètre du match, pause/reprise et périodes.
 - Effectif modifiable avec numéro et nom.
 - Entrée/sortie d'un joueur en un appui.
